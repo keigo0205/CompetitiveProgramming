@@ -29,7 +29,7 @@ from functools import reduce
 # string.ascii_uppercase
 
 import sys
-
+input = sys.stdin.readline
 sys.setrecursionlimit(2 * 10**6)
 
 # alphabet
