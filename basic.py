@@ -81,6 +81,23 @@ def extGCD(x, y):
 
 
 # 階乗の逆元は(x!)^(-1) * x=((x-1)!)^(-1)を利用する。
+# 1 / a mod m を求める。
 def mod_inv(a, m):
     x, _ = extGCD(a, m)
     return (x + m) % m
+
+
+# nの素因数を辞書形式で求める。
+def factor(n):
+    ret = {}
+    p = 2
+    root_n = int(n**0.5)
+    while n > 1:
+        if n % p == 0:
+            n //= p
+            ret[p] = ret.get(p, 0) + 1
+        elif p <= root_n:
+            p += 1
+        else:
+            p = n
+    return ret
